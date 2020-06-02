@@ -14,21 +14,31 @@
     <p th:text="${manipedi}">Mani/Pedi</p>
 </div>
 <div id = "servicesMenu">
+    <h2>Menu of Available Services</h2>
 <!--    <th:block th:each = "facial : ${appropriateFacials}">-->
 <!--        <h3 th:text = "${facial}">Facial Name</h3>-->
 <!--    </th:block>-->
     <table class="table table-striped">
-        <thead>
         <tr>
-            <th>Appropriate Facials</th>
+            <h3>Facial Treatments</h3>
         </tr>
-        </thead>
+        <tr>
+            <td th:replace="fragments :: facialBlurb"></td>
+        </tr>
         <th:block th:each="facial : ${appropriateFacials}">
             <tr>
                 <td th:text = "${facial}">AppFacPlaceholder</td>
             </tr>
         </th:block>
     </table>
+    <div th:if="${manipedi.equals('manicure')}"id = mani>
+        <h3>Manicure</h3>
+        <p th:replace="fragments :: manicureDescription"></p>
+    </div>
+    <div th:if="${manipedi.equals('pedicure')}"id = pedi>
+        <h3 >Pedicure</h3>
+        <p th:replace="fragments :: pedicureDescription"></p>
+    </div>
 </div>
 </body>
 </html>
