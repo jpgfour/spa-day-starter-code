@@ -25,6 +25,8 @@ public class UserController {
         // add form submission handling code here
         //System.out.println(user.getUsername());
         model.addAttribute( "username", user.getUsername());
+        model.addAttribute("error",true);
+        model.addAttribute("email",user.getEmail());
         if (user.getPassword().equals(verify)) {
             //System.out.println("verified!");
             return "user/index.html";
