@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
-<body>
+<body class="container">
+
+<h2 th:text="'Welcome, ' + ${username}"></h2>
+<h2>Please click <a th:href="@{/}">here</a> to proceed to your Service Selection options.</h2>
 
 </body>
 </html>
